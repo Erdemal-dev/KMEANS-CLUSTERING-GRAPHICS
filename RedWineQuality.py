@@ -35,8 +35,10 @@ dic2={0:"Harmless",1:"Little Harmful",2:"Harmfull"}
 df["Harmfulness"]=df["Harmfulness"].map(dic2)
 
 sns.scatterplot(data=df,x="fixed acidity",y="volatile acidity",hue="Absolute Acidity",ax=ax[0],alpha=1)
+sns.kdeplot(data=df,x="fixed acidity",y="volatile acidity",hue="Absolute Acidity",ax=ax[0],alpha=1,fill=True)
 plt.title("Absolute Acidity")
 sns.scatterplot(data=df,x="residual sugar",y="alcohol",hue="Harmfulness",ax=ax[1],alpha=1)
+sns.kdeplot(data=df,x="residual sugar",y="alcohol",hue="Harmfulness",ax=ax[1],alpha=1,fill=True)
 plt.title("Harmfullnes")
 
 plt.show()
